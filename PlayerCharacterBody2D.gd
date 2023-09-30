@@ -29,6 +29,9 @@ var health_text_format = "%d"
 
 var particle = preload("res://circleParticle.tscn")
 
+@onready var hit_sfx = $HitSFX
+@onready var jump_sfx = $JumpSFX
+
 func _ready():
 	self_sprite.self_modulate = DEFAULT_COLOR
 	health_label.add_text(health_text_format % health)
@@ -48,6 +51,7 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jump_sfx.play()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -83,6 +87,7 @@ func damaged(projectile):
 		health_label.add_text(health_text_format % health)
 		self_sprite.self_modulate = HURT_COLOR
 		hurt_timer = HURT_TIME
+		hit_sfx.play()
 		if health <= 0:
 			velocity = Vector2(0, 0)
 			collision_layer = 0

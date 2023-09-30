@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dsb4cupghg5of"]
+[gd_scene load_steps=9 format=3 uid="uid://dsb4cupghg5of"]
 
 [ext_resource type="Script" path="res://boxedSpace.gd" id="1_kaapg"]
 [ext_resource type="Script" path="res://boundary.gd" id="2_ifihl"]
 [ext_resource type="PackedScene" uid="uid://dv8hwks0xe3c0" path="res://player.tscn" id="3_b55g5"]
+[ext_resource type="AudioStream" uid="uid://hyd668oirqhx" path="res://res/LD54_0.ogg" id="4_yuav8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_usx0l"]
 size = Vector2(1353, 99)
@@ -44,3 +45,7 @@ position = Vector2(1203.5, 322)
 shape = SubResource("RectangleShape2D_oer7k")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_b55g5")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yuav8")
+autoplay = true

@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dv8hwks0xe3c0"]
+[gd_scene load_steps=6 format=3 uid="uid://dv8hwks0xe3c0"]
 
 [ext_resource type="Script" path="res://PlayerCharacterBody2D.gd" id="1_8l13s"]
+[ext_resource type="AudioStream" uid="uid://b88dh38cr8v6o" path="res://res/jump.ogg" id="2_ix2ut"]
+[ext_resource type="AudioStream" uid="uid://jfrsvixicrf" path="res://res/hit.ogg" id="3_gq63f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yripi"]
 size = Vector2(40, 40)
@@ -33,3 +35,9 @@ offset_left = -61.0
 offset_top = -62.0
 offset_right = -21.0
 offset_bottom = -22.0
+
+[node name="JumpSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ix2ut")
+
+[node name="HitSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gq63f")

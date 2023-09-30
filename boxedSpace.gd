@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var arenaBody = $StaticBody2D
 @onready var player = $CharacterBody2D
+@onready var music = $AudioStreamPlayer
 var projectile = preload("res://circleProjectiles.tscn")
 
 const WAVE_TIME = 5.0
@@ -43,3 +44,4 @@ func on_player_death():
 	button.text = "Restart?"
 	button.pressed.connect(do_restart)
 	player.add_child(button)
+	music.stop()
