@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsb4cupghg5of"]
+
+[ext_resource type="Script" path="res://boxedSpace.gd" id="1_kaapg"]
+[ext_resource type="Script" path="res://PlayerCharacterBody2D.gd" id="1_l6wl1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usx0l"]
+size = Vector2(1353, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_atuwg"]
+size = Vector2(100, 845)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o01kj"]
+size = Vector2(1355, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oer7k"]
+size = Vector2(101, 850)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yripi"]
+size = Vector2(40, 40)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ruce8"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_kaapg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+position = Vector2(1, 0)
+invert_enabled = true
+polygon = PackedVector2Array(2, 647, 1155, 647, 1152, -1, 2, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(578.5, -50.5)
+shape = SubResource("RectangleShape2D_usx0l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-49, 324.5)
+shape = SubResource("RectangleShape2D_atuwg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(579.5, 698)
+shape = SubResource("RectangleShape2D_o01kj")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1203.5, 322)
+shape = SubResource("RectangleShape2D_oer7k")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(590, 561)
+script = ExtResource("1_l6wl1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_yripi")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(40, 40)
+texture = SubResource("CanvasTexture_ruce8")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
