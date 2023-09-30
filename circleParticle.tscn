@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b11lnbcljlqsm"]
+
+[ext_resource type="Texture2D" uid="uid://cx5ihekx61v8u" path="res://res/circle_64x64.png" id="1_h1v2k"]
+[ext_resource type="Script" path="res://circleParticle.gd" id="1_wpfda"]
+
+[node name="Particle" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_wpfda")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("1_h1v2k")
