@@ -53,6 +53,9 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 		jump_sfx.play()
 
+	if Input.is_action_just_released("jump") and velocity.y < 0.0:
+		velocity.y /= 3.0
+
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")
