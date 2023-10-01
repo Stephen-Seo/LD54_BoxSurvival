@@ -32,11 +32,22 @@ var particle = preload("res://circleParticle.tscn")
 @onready var hit_sfx = $HitSFX
 @onready var jump_sfx = $JumpSFX
 
+@onready var title_text = $GameTitleText
+var title_timer = 5.0
+
 func _ready():
 	self_sprite.self_modulate = DEFAULT_COLOR
 	health_label.add_text(health_text_format % health)
+	title_text.add_theme_font_size_override("normal_font_size", 40)
+	title_text.add_text("LD54 - Box Survival\nBy: BurnedKirby\nMade in Godot")
 
 func _physics_process(delta):
+	if title_timer > 0.0:
+		title_timer -= delta
+		if title_timer < 0.0:
+			title_timer = 0.0
+			title_text.get_parent().remove_child(title_text)
+
 	if health <= 0:
 		return
 	

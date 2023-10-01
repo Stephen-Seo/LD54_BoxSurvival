@@ -41,3 +41,9 @@ stream = ExtResource("2_ix2ut")
 
 [node name="HitSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_gq63f")
+
+[node name="GameTitleText" type="RichTextLabel" parent="."]
+offset_left = -137.0
+offset_top = 74.0
+offset_right = 336.0
+offset_bottom = 293.0
