@@ -19,3 +19,6 @@ them) since I am somewhat time restricted (currently taking a course) since I
 don’t think I was serious enough when making this game, so I don’t think it
 should get a rating. In the future, I definitely will be using Godot though,
 and hopefully with a game with more content.
+
+EDIT: Just realized that ldjam.com allows you to opt out of ratings, so I'll do
+that.
