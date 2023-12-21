@@ -35,11 +35,15 @@ var particle = preload("res://circleParticle.tscn")
 @onready var title_text = $GameTitleText
 var title_timer = 5.0
 
+@onready var touch_jump = $JumpTouchButton
+@onready var touch_left = $LeftTouchButton
+@onready var touch_right = $RightTouchButton
+
 func _ready():
 	self_sprite.self_modulate = DEFAULT_COLOR
 	health_label.add_text(health_text_format % health)
 	title_text.add_theme_font_size_override("normal_font_size", 40)
-	title_text.add_text("LD54 - Box Survival\nBy: BurnedKirby\nMade in Godot")
+	title_text.add_text("LD54 - Box Survival\nBy: BurnedKirby\nMade in Godot\nWAD or Touch to move")
 
 func _physics_process(delta):
 	if title_timer > 0.0:
@@ -110,3 +114,6 @@ func damaged(projectile):
 			for i in range(100):
 				spawn_particle(Color(1, 1, 1))
 			get_parent().on_player_death()
+			touch_jump.hide()
+			touch_left.hide()
+			touch_right.hide()
