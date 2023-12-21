@@ -70,6 +70,7 @@ offset_bottom = 76.0
 text = "Left"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.4, 1.4)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 35.0
