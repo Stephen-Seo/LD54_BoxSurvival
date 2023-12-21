@@ -13,6 +13,10 @@ Made with [Godot](https://godotengine.org/)
 The `ld_release` tag points to the commit of the game before the ldjam.com
 deadline. The new changes only implement touch-based controls.
 
+The latest version of the game can be found [here](https://seodisparate.com/demos/ld54).
+
+The release of the game at the end of the 54th ldjam.com can be found [here](https://seodisparate.com/demos/ld54_orig).
+
 ## About This Game
 
 This entry was my first foray into making something with Godot. It definitely
