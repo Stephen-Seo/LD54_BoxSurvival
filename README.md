@@ -8,6 +8,11 @@ Made with [Godot](https://godotengine.org/)
 
 [Music download](https://seodisparate.bandcamp.com/track/ld54-bg-music)
 
+## Post jam edits?
+
+The `ld_release` tag points to the commit of the game before the ldjam.com
+deadline. The new changes only implement touch-based controls.
+
 ## About This Game
 
 This entry was my first foray into making something with Godot. It definitely
