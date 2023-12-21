@@ -14,6 +14,8 @@ colors = PackedColorArray(1, 1, 1, 0.454902, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_iin72"]
 gradient = SubResource("Gradient_v7mm3")
+width = 128
+height = 128
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
@@ -32,39 +34,39 @@ scale = Vector2(40, 40)
 texture = SubResource("CanvasTexture_ruce8")
 
 [node name="JumpTouchButton" type="TouchScreenButton" parent="."]
-position = Vector2(-32.9999, -95)
+position = Vector2(-64, -159)
 texture_normal = SubResource("GradientTexture2D_iin72")
 action = "jump"
 
 [node name="Label" type="Label" parent="JumpTouchButton"]
-offset_left = 12.0
-offset_top = 19.0
-offset_right = 53.0
-offset_bottom = 42.0
+offset_left = 42.0
+offset_top = 52.0
+offset_right = 83.0
+offset_bottom = 75.0
 text = "Jump"
 
 [node name="RightTouchButton" type="TouchScreenButton" parent="."]
-position = Vector2(40, -30)
+position = Vector2(53, -60)
 texture_normal = SubResource("GradientTexture2D_iin72")
 action = "right"
 
 [node name="Label" type="Label" parent="RightTouchButton"]
-offset_left = 12.0
-offset_top = 19.0
-offset_right = 53.0
-offset_bottom = 42.0
+offset_left = 43.0
+offset_top = 53.0
+offset_right = 84.0
+offset_bottom = 76.0
 text = "Right"
 
 [node name="LeftTouchButton" type="TouchScreenButton" parent="."]
-position = Vector2(-103, -30)
+position = Vector2(-184, -60)
 texture_normal = SubResource("GradientTexture2D_iin72")
 action = "left"
 
 [node name="Label" type="Label" parent="LeftTouchButton"]
-offset_left = 18.0
-offset_top = 20.0
-offset_right = 59.0
-offset_bottom = 43.0
+offset_left = 47.0
+offset_top = 53.0
+offset_right = 88.0
+offset_bottom = 76.0
 text = "Left"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -88,8 +90,8 @@ stream = ExtResource("2_ix2ut")
 stream = ExtResource("3_gq63f")
 
 [node name="GameTitleText" type="RichTextLabel" parent="."]
-offset_left = -138.0
-offset_top = 46.0
-offset_right = 335.0
-offset_bottom = 286.0
+offset_left = -229.0
+offset_top = 18.0
+offset_right = 244.0
+offset_bottom = 258.0
 scroll_active = false
