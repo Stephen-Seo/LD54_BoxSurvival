@@ -15,10 +15,15 @@ run/main_scene="res://boxedSpace.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+driver/output_latency.web=100
+
 [display]
 
-window/size/viewport_width=500
-window/size/viewport_height=500
+window/size/viewport_width=550
+window/size/viewport_height=550
+window/size/resizable=false
 
 [input]
 
