@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dv8hwks0xe3c0"]
+[gd_scene load_steps=14 format=3 uid="uid://dv8hwks0xe3c0"]
 
 [ext_resource type="Script" path="res://PlayerCharacterBody2D.gd" id="1_8l13s"]
+[ext_resource type="Script" path="res://Camera2DScript.gd" id="2_hpvt4"]
 [ext_resource type="AudioStream" uid="uid://b88dh38cr8v6o" path="res://res/jump.ogg" id="2_ix2ut"]
 [ext_resource type="AudioStream" uid="uid://jfrsvixicrf" path="res://res/hit.ogg" id="3_gq63f"]
 
@@ -10,15 +11,29 @@ size = Vector2(40, 40)
 [sub_resource type="CanvasTexture" id="CanvasTexture_ruce8"]
 
 [sub_resource type="Gradient" id="Gradient_v7mm3"]
-colors = PackedColorArray(1, 1, 1, 0.454902, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0.524194, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.117647)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_iin72"]
 gradient = SubResource("Gradient_v7mm3")
-width = 128
-height = 128
+width = 256
+height = 256
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2gn5h"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_wp0cg"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_wxt3j"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_oauio"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vkr7b"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(590, 561)
@@ -34,55 +49,60 @@ scale = Vector2(40, 40)
 texture = SubResource("CanvasTexture_ruce8")
 
 [node name="JumpTouchButton" type="TouchScreenButton" parent="."]
-position = Vector2(-64, -159)
+position = Vector2(-127, -279)
 texture_normal = SubResource("GradientTexture2D_iin72")
 action = "jump"
 
-[node name="Label" type="Label" parent="JumpTouchButton"]
-offset_left = 42.0
-offset_top = 52.0
-offset_right = 83.0
-offset_bottom = 75.0
+[node name="JumpLabel" type="Label" parent="JumpTouchButton"]
+offset_left = 89.0
+offset_top = 105.0
+offset_right = 165.0
+offset_bottom = 147.0
 text = "Jump"
+label_settings = SubResource("LabelSettings_2gn5h")
 
 [node name="RightTouchButton" type="TouchScreenButton" parent="."]
-position = Vector2(53, -60)
+position = Vector2(23, -20)
 texture_normal = SubResource("GradientTexture2D_iin72")
 action = "right"
 
-[node name="Label" type="Label" parent="RightTouchButton"]
-offset_left = 43.0
-offset_top = 53.0
-offset_right = 84.0
-offset_bottom = 76.0
+[node name="RightLabel" type="Label" parent="RightTouchButton"]
+offset_left = 90.0
+offset_top = 106.0
+offset_right = 165.0
+offset_bottom = 148.0
 text = "Right"
+label_settings = SubResource("LabelSettings_wp0cg")
 
 [node name="LeftTouchButton" type="TouchScreenButton" parent="."]
-position = Vector2(-184, -60)
+position = Vector2(-279, -20)
 texture_normal = SubResource("GradientTexture2D_iin72")
 action = "left"
 
-[node name="Label" type="Label" parent="LeftTouchButton"]
-offset_left = 47.0
-offset_top = 53.0
-offset_right = 88.0
-offset_bottom = 76.0
+[node name="LeftLabel" type="Label" parent="LeftTouchButton"]
+offset_left = 100.0
+offset_top = 99.0
+offset_right = 156.0
+offset_bottom = 141.0
 text = "Left"
+label_settings = SubResource("LabelSettings_wxt3j")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.4, 1.4)
+script = ExtResource("2_hpvt4")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 35.0
-offset_top = 36.0
-offset_right = 151.0
-offset_bottom = 76.0
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = -23.0
+offset_top = 50.0
+offset_right = 70.0
+offset_bottom = 122.0
+label_settings = SubResource("LabelSettings_oauio")
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
-offset_left = -61.0
-offset_top = -62.0
-offset_right = -21.0
-offset_bottom = -22.0
+[node name="HPLabel" type="Label" parent="."]
+offset_left = -8.0
+offset_top = 23.0
+offset_right = 7.0
+offset_bottom = 47.0
+label_settings = SubResource("LabelSettings_vkr7b")
 
 [node name="JumpSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_ix2ut")

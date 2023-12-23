@@ -18,11 +18,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var health = 5
 var hurt_timer = 0.0
 
-@onready var text_label = $RichTextLabel
+@onready var text_label = $TimerLabel
 var text_timer = 0.0
 var text_format = "%.1f"
 
-@onready var health_label = $RichTextLabel2
+@onready var health_label = $HPLabel
 var health_text_format = "%d"
 
 @onready var self_sprite = $Sprite2D
@@ -39,11 +39,21 @@ var title_timer = 5.0
 @onready var touch_left = $LeftTouchButton
 @onready var touch_right = $RightTouchButton
 
+@onready var jump_label = $JumpTouchButton/JumpLabel
+@onready var left_label = $LeftTouchButton/LeftLabel
+@onready var right_label = $RightTouchButton/RightLabel
+
 func _ready():
 	self_sprite.self_modulate = DEFAULT_COLOR
-	health_label.add_text(health_text_format % health)
+	health_label.text = health_text_format % health
 	title_text.add_theme_font_size_override("normal_font_size", 40)
 	title_text.add_text("LD54 - Box Survival\nBy: BurnedKirby\nMade in Godot\nWAD or Touch to move")
+	var somewhat_transparent_color = Color(1, 1, 1, 0.3)
+	text_label.label_settings.font_color = somewhat_transparent_color
+	health_label.label_settings.font_color = somewhat_transparent_color
+	jump_label.label_settings.font_color = somewhat_transparent_color
+	left_label.label_settings.font_color = somewhat_transparent_color
+	right_label.label_settings.font_color = somewhat_transparent_color
 
 func _physics_process(delta):
 	if title_timer > 0.0:
@@ -51,13 +61,18 @@ func _physics_process(delta):
 		if title_timer < 0.0:
 			title_timer = 0.0
 			title_text.get_parent().remove_child(title_text)
+			var white = Color(1, 1, 1, 1)
+			text_label.label_settings.font_color = white
+			health_label.label_settings.font_color = white
+			jump_label.label_settings.font_color = white
+			left_label.label_settings.font_color = white
+			right_label.label_settings.font_color = white
 
 	if health <= 0:
 		return
 	
 	text_timer += delta
-	text_label.clear()
-	text_label.add_text(text_format % text_timer)
+	text_label.text = text_format % text_timer
 		
 	# Add the gravity.
 	if not is_on_floor():
@@ -101,8 +116,7 @@ func damaged(projectile):
 		spawn_particle(projectile_color)
 	if hurt_timer == 0.0:
 		health -= 1
-		health_label.clear()
-		health_label.add_text(health_text_format % health)
+		health_label.text = health_text_format % health
 		self_sprite.self_modulate = HURT_COLOR
 		hurt_timer = HURT_TIME
 		hit_sfx.play()
