@@ -11,7 +11,8 @@ Made with [Godot](https://godotengine.org/)
 ## Post jam edits?
 
 The `ld_release` tag points to the commit of the game before the ldjam.com
-deadline. The new changes only implement touch-based controls.
+deadline. The new changes only implement touch-based controls and UI
+changes/tweaks.
 
 The latest version of the game can be found [here](https://seodisparate.com/demos/ld54).
 
