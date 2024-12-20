@@ -14,9 +14,9 @@ The `ld_release` tag points to the commit of the game before the ldjam.com
 deadline. The new changes only implement touch-based controls and UI
 changes/tweaks.
 
-The latest version of the game can be found [here](https://seodisparate.com/demos/ld54).
+The latest version of the game can be found [here](https://seodisparate.com/demos/ld54_updated).
 
-The release of the game at the end of the 54th ldjam.com can be found [here](https://seodisparate.com/demos/ld54_orig).
+The release of the game at the end of the 54th ldjam.com can be found [here](https://seodisparate.com/demos/ld54).
 
 ## About This Game
 
